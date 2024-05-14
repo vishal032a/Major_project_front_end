@@ -72,13 +72,13 @@ const Signup = () => {
               />
               {password_visibilty ? (
                 <FaEyeSlash
-                  color="white"
+                  color="black"
                   size={25}
                   onClick={() => setPassword_visibilty((prev) => !prev)}
                 />
               ) : (
                 <FaEye
-                  color="white"
+                  color="black"
                   size={25}
                   onClick={() => setPassword_visibilty((prev) => !prev)}
                 />

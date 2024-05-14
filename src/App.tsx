@@ -22,6 +22,7 @@ import Login from "./pages/login/Login";
 import SignUp from "./pages/signup/SignUp";
 import Channels from "./pages/channels/Channels";
 import Messages from "./pages/messages/Messages";
+import Logout from "./pages/Logout/Logout";
 
 function App() {
   const isAuthenticated = localStorage.getItem("username");
@@ -45,6 +46,10 @@ function App() {
                     name: "Messages",
                     list: "/messages",
                   },
+                  {
+                    name:"Logout",
+                    list:"/logout"
+                  }
                 ]}
                 options={{
                   syncWithLocation: true,
@@ -57,6 +62,7 @@ function App() {
                   <Route index element={<Login />} />
                   <Route path="/signup" element={<SignUp />} />
                   <Route path="/login" element={<Login />} />
+                  <Route path="/logout" element={<Logout/>}/>
                   <Route
                     element={
                       isAuthenticated && (
