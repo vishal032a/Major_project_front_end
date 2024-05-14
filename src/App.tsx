@@ -47,9 +47,9 @@ function App() {
                     list: "/messages",
                   },
                   {
-                    name:"Logout",
-                    list:"/logout"
-                  }
+                    name: "Logout",
+                    list: "/logout",
+                  },
                 ]}
                 options={{
                   syncWithLocation: true,
@@ -62,7 +62,7 @@ function App() {
                   <Route index element={<Login />} />
                   <Route path="/signup" element={<SignUp />} />
                   <Route path="/login" element={<Login />} />
-                  <Route path="/logout" element={<Logout/>}/>
+                  <Route path="/logout" element={<Logout />} />
                   <Route
                     element={
                       isAuthenticated && (
@@ -91,7 +91,7 @@ function App() {
                         element={isAuthenticated ? <Channels /> : <Login />}
                       />
                     </Route>
-                    <Route path="/Messages">
+                    <Route path="/messages">
                       <Route
                         index
                         element={
@@ -104,7 +104,7 @@ function App() {
                           )
                         }
                       />
-                      <Route
+                      {/* <Route
                         path="*"
                         element={
                           isAuthenticated ? (
@@ -119,7 +119,7 @@ function App() {
                             <Login />
                           )
                         }
-                      />
+                      /> */}
                     </Route>
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>

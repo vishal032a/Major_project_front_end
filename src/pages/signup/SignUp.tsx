@@ -71,17 +71,17 @@ const Signup = () => {
                 placeholder="Password"
               />
               {password_visibilty ? (
-                <FaEyeSlash
-                  color="black"
-                  size={25}
-                  onClick={() => setPassword_visibilty((prev) => !prev)}
-                />
+                 <FaEye
+                 color="black"
+                 size={25}
+                 onClick={() => setPassword_visibilty((prev) => !prev)}
+               />
               ) : (
-                <FaEye
-                  color="black"
-                  size={25}
-                  onClick={() => setPassword_visibilty((prev) => !prev)}
-                />
+                <FaEyeSlash
+                color="black"
+                size={25}
+                onClick={() => setPassword_visibilty((prev) => !prev)}
+              />
               )}
             </div>
             <button

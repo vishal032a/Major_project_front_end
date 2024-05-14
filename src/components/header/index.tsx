@@ -20,7 +20,7 @@ type IUser = {
 export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({
   sticky = true,
 }) => {
-  const { mode, setMode } = useContext(ColorModeContext);
+  // const { mode, setMode } = useContext(ColorModeContext);
 
   const { data: user } = useGetIdentity<IUser>();
 
@@ -40,23 +40,23 @@ export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({
             justifyContent="flex-end"
             alignItems="center"
           >
-            <IconButton
+            {/* <IconButton
               color="inherit"
               onClick={() => {
                 setMode();
               }}
             >
               {mode === "dark" ? <LightModeOutlined /> : <DarkModeOutlined />}
-            </IconButton>
+            </IconButton> */}
 
-            {(user?.avatar || user?.name) && (
+            {localStorage.getItem("username") && (
               <Stack
                 direction="row"
                 gap="16px"
                 alignItems="center"
                 justifyContent="center"
               >
-                {user?.name && (
+                {localStorage.getItem("username") && (
                   <Typography
                     sx={{
                       display: {
@@ -66,7 +66,7 @@ export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({
                     }}
                     variant="subtitle2"
                   >
-                    {user?.name}
+                    {localStorage.getItem("username")}
                   </Typography>
                 )}
                 <Avatar src={user?.avatar} alt={user?.name} />
