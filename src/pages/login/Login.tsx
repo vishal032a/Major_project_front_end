@@ -11,8 +11,8 @@ const Login = () => {
   const form = useForm<LoginDataType>();
   const [password_visibilty, setPassword_visibilty] = useState(false);
   const navigate = useNavigate();
-  const colorCode =
-    localStorage.getItem("colorMode") === "light" ? "black" : "white";
+  // const colorCode =
+  //   localStorage.getItem("colorMode") === "light" ? "black" : "white";
 
   const { register, handleSubmit, getValues } = form;
 
@@ -75,13 +75,13 @@ const Login = () => {
                 placeholder="Password"
               />
               {password_visibilty ? (
-                <FaEyeSlash
+                <FaEye
                   color="black"
                   size={25}
                   onClick={() => setPassword_visibilty((prev) => !prev)}
                 />
               ) : (
-                <FaEye
+                <FaEyeSlash
                   color="black"
                   size={25}
                   onClick={() => setPassword_visibilty((prev) => !prev)}
